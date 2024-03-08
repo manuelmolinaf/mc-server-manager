@@ -24,11 +24,9 @@ export class DashboardComponent implements OnInit {
       message: 'list'
     }
 
-    this.rconService.sendMessage(message);
-
-    // this.rconService.sendMessage(message).subscribe( res =>{
-    //   console.log(res)
-    // });
+    this.rconService.sendMessage(message).subscribe( res => {
+      console.log(res)
+    });
    
    
   }

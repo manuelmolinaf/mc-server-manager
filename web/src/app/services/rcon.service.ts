@@ -7,7 +7,7 @@ import { Message } from '../interfaces/message.interface';
 })
 export class RconService {
 
-  private serverUrl = 'localhost:3000/api'
+  private serverUrl = 'http://localhost:3000'
 
   constructor(private http:HttpClient) {
   
@@ -15,10 +15,8 @@ export class RconService {
 
   public sendMessage(message:Message){
     
-    return this.http.post<string>(`${this.serverUrl}/sendMessage`, message).subscribe(res=> console.log(res));
+    return this.http.post<any>(`${this.serverUrl}/sendMessage`, message);
   }
-
-
 
 
 }
